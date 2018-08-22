@@ -1,0 +1,12 @@
+version: '3.6'
+services:
+  notebook:
+    build: .
+    image: ocampor/jupyter-notebook
+    ports:
+      - 8000:8000
+    volumes:
+      - './data:/home/rocampo/data'
+      - './docs:/home/rocampo/docs'
+      - './models:/home/rocampo/models'
+    entrypoint: ['/bin/bash', '/home/entrypoint.sh']
