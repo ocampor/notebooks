@@ -5,3 +5,4 @@ matplotlib==2.2.3
 scikit-image==0.14.0
 Pillow==5.2.0
 opencv-python==3.4.2.17
+Cython==0.28.5
