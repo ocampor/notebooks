@@ -2,13 +2,17 @@ FROM python:3.7-stretch
 
 ENV ROOT_HOME /home
 ENV LIBSVM_PATH /opt/libsvm
+ENV LIBLINEAR_PATH /opt/liblinear
 
 WORKDIR ${ROOT_HOME}
 
-RUN git clone 'https://github.com/cjlin1/libsvm.git' ${LIBSVM_PATH}
-RUN make -C ${LIBSVM_PATH}
-RUN make -C ${LIBSVM_PATH}/python
+ADD install_svm.sh install_svm.sh
+
+RUN sh -x install_svm.sh 'https://github.com/cjlin1/libsvm.git' ${LIBSVM_PATH}
+RUN sh -x install_svm.sh 'https://github.com/cjlin1/liblinear.git' ${LIBLINEAR_PATH}
+
 ENV PYTHONPATH ${PYTHONPATH}:${LIBSVM_PATH}/python
+ENV PYTHONPATH ${PYTHONPATH}:${LIBLINEAR_PATH}/python
 
 ADD requirements.txt ${ROOT_HOME}
 ADD entrypoint.sh ${ROOT_HOME}

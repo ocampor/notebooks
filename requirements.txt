@@ -1,7 +1,14 @@
 jupyter==1.0.0
-numpy==1.15.1
-scipy==1.1.0
-matplotlib==2.2.3
-scikit-image==0.14.0
-Pillow==5.2.0
-opencv-python==3.4.2.17
+numpy>=1.15.1
+scipy>=1.1.0
+
+#Charts
+matplotlib>=2.2.3
+
+# Machine learning
+scikit-image>=0.14.0
+
+# Image
+Pillow>=5.2.0
+opencv-python>=3.4.2.17
+
