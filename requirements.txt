@@ -1,5 +1,6 @@
 jupyter==1.0.0
 numpy>=1.15.1
+pandas>=0.25.0
 scipy>=1.1.0
 
 #Charts
@@ -7,8 +8,8 @@ matplotlib>=2.2.3
 
 # Machine learning
 scikit-image>=0.14.0
+scikit-learn>=0.21.3
 
 # Image
 Pillow>=5.2.0
 opencv-python>=3.4.2.17
-
