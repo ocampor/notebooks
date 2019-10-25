@@ -2,12 +2,10 @@ version: '3.6'
 services:
   notebook:
     build: .
-    image: ocampor/jupyter-notebook
+    image: ocampor/notebook:1.0.0-base
     ports:
       - 8000:8000
     volumes:
-      - '${DATA_PATH}:/home/rocampo/data'
-      - './notebooks:/home/rocampo/docs'
-    entrypoint:
-      - /bin/bash
-      - /home/entrypoint.sh
+      - '${DATA_PATH}:/home/ocampor/data'
+      - './notebooks:/home/ocampor/notebooks'
+
