@@ -2,4 +2,4 @@ FROM jupyter/minimal-notebook:latest
 
 ADD requirements /requirements
 
-RUN pip install -r /requirements/requirements.txt
+RUN pip install -r /requirements/requirements.dev.txt
