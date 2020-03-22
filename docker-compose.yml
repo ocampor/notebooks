@@ -1,11 +1,12 @@
-version: '3.6'
+version: "3.6"
 services:
   notebook:
-    build: .
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
     image: ocampor/notebook:1.0.0-base
+    working_dir: /notebooks
     ports:
-      - 8000:8000
+      - 8888:8888
     volumes:
-      - '${DATA_PATH}:/home/ocampor/data'
-      - './notebooks:/home/ocampor/notebooks'
-
+      - ./notebooks:/notebooks
